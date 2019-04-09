@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quotes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            padding:25px;
+        }
+        #content {
+            border: 3px solid black;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 10px 10px 10px;
+        }
+
+        button {
+            padding: 15px;
+            background-color: blue;
+            border-radius: 15px;
+            color: white;
+            font-size: 100%;
+            width: 100px;
+        }
+
+        h1 {
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            /* text-align: center; */
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <h1>Here are the awesome Quotes!</h1>
+        <% for (var x in allquotes) { %>
+        <h3>Name: <%=allquotes[x].name %></h3>
+        <h3>Quote: <%=allquotes[x].quote %></h3>
+        <h3>Created at: <%=allquotes[x].createdAt %></h3>
+        <hr>
+        <% } %>
+        <a href="/"><button class="btn btn-primary">Back</button></a>
+    </div>
+
+</body>
+
+</html>

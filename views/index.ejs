@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quoting Dojo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 175px;
+        }
+
+        #content {
+            margin: auto;
+            width: 600px;
+            border: 3px solid black;
+            border-radius: 20px;
+            min-height: 380px;
+            padding: 20px;
+            box-shadow: 10px 10px 10px;
+            /* text-align: center; */
+        }
+
+        #button1 {
+            float: left;
+        }
+
+        #button2 {
+            float: right;
+        }
+
+        h1 {
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid black;
+        }
+
+        #textarea {
+            height: 100px;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+  
+        <div id="content">
+            <form action='/processing' method='post'>
+                <% JSON.stringify(messages) %>
+                <% if(messages.registration) { %>
+                <% for (var x of messages.registration) { %>
+                <p><%= x %></p>
+                <% } %>
+                <% } %>
+                <h1>Welcome to Quoting Dojo</h1>
+                <h4>Your Name: <input type="text" name="name" class="form-control"></h4>
+                <h4>Your Quote: <textarea name="quote" class="form-control" id="textarea"></textarea></h4>
+                <input type='submit' value='Add Quote!' class="btn btn-success" id="button1">
+            </form>
+            <a href="/quotes"><button class="btn btn-primary" id="button2">Skip to Quotes!</button></a>
+            <br><br>
+        </div>
+</body>
+
+</html>
